@@ -1,0 +1,6 @@
+main: com.github.devlaq.matchmaker.Main
+name: MatchMaker
+version: dev1
+libraries:
+  - io.github.monun:tap:$libraries.tap.version
+  - io.github.monun:kommand:$libraries.kommand.version

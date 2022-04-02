@@ -1,0 +1,10 @@
+# Gradle
+.gradle
+build
+
+# IntelliJ
+.idea
+
+# Avoid Ignoring Gradle Wrapper
+!gradle-wrapper.jar
+!gradle-wrapper.properties
