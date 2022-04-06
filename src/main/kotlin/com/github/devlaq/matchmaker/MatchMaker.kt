@@ -1,7 +1,6 @@
 package com.github.devlaq.matchmaker
 
 import com.github.devlaq.matchmaker.command.MatchMakerCommand
-import com.github.devlaq.matchmaker.game.GameQueue
 import io.github.monun.kommand.kommand
 import org.bukkit.entity.Player
 import org.bukkit.plugin.java.JavaPlugin
@@ -9,12 +8,18 @@ import org.bukkit.plugin.java.JavaPlugin
 class MatchMaker: JavaPlugin() {
 
     companion object {
+
+        /*
+           matchMake structures
+
+           matchMake -> find available games from Games
+           if no game available -> create game
+           create game -> GameFactory#createGame
+
+         */
+
         fun matchMake(gameName: String, vararg players: Player) {
-             players.forEach { matchMake(gameName, it) }
-        }
-
-        fun matchMake(gameName: String, player: Player) {
-
+            Games.matchmake(gameName, *players)
         }
     }
 
@@ -22,7 +27,6 @@ class MatchMaker: JavaPlugin() {
         kommand {
             register("matchmaker") {
                 MatchMakerCommand.register(this)
-
             }
         }
     }

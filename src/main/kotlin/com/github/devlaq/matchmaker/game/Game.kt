@@ -1,18 +1,45 @@
 package com.github.devlaq.matchmaker.game
 
-abstract class Game {
+import org.bukkit.entity.Player
 
-    // Called at game initialize.
+/**
+ * @since 1.0-dev1
+ * @author devlaq
+ */
+abstract class Game() {
+
+    abstract fun type(): String
+
     abstract fun initialize()
 
-    // Called at game start.
     abstract fun start()
 
-    // Called at game force stop
+    /**
+     * Called when game force stop.
+     */
     abstract fun stop()
 
+    abstract fun playerJoin(player: Player)
+
+    abstract fun playerQuit(player: Player)
+
+    abstract fun players(): Collection<Player>
+
     /**
-     * @return Current game status.
+     * @return can player join the game.
+     */
+    abstract fun canJoin(): Boolean
+
+    /**
+     * Remaining users to start.
+     * this will used from party system.
+     *
+     * @return remaining usersto start.
+     */
+    abstract fun remainingUsers(): Int
+
+    /**
+     * @return current game status.
      */
     abstract fun status(): GameStatus
 
