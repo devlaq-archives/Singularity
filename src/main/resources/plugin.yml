@@ -1,6 +1,7 @@
-main: com.github.devlaq.matchmaker.Main
+main: com.github.devlaq.matchmaker.MatchMaker
 name: MatchMaker
-version: 1.0-dev1
+version: 1.0-dev3
+api-version: 1.18
 libraries:
-  - io.github.monun:tap:$libraries.tap.version
-  - io.github.monun:kommand:$libraries.kommand.version
+  - io.github.monun:tap-core:4.4.0
+  - io.github.monun:kommand-core:2.10.0
