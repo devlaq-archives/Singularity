@@ -1,4 +1,4 @@
-package com.github.devlaq.matchmaker.game
+package com.github.devlaq.singularity.game
 
 enum class GameStatus {
 

@@ -1,4 +1,4 @@
-package com.github.devlaq.matchmaker.game
+package com.github.devlaq.singularity.game
 
 import org.bukkit.entity.Player
 
@@ -8,10 +8,24 @@ import org.bukkit.entity.Player
  */
 abstract class Game() {
 
+    /**
+     * Type of game.
+     */
     abstract fun type(): String
 
+    /**
+     * Id of game.
+     */
+    abstract fun id(): String
+
+    /**
+     * Called when initializing game.
+     */
     abstract fun initialize()
 
+    /**
+     * Called when starting game.
+     */
     abstract fun start()
 
     /**
@@ -19,10 +33,19 @@ abstract class Game() {
      */
     abstract fun stop()
 
+    /**
+     * Called when new player joined to the game.
+     */
     abstract fun playerJoin(player: Player)
 
+    /**
+     * Called when player quit the game.
+     */
     abstract fun playerQuit(player: Player)
 
+    /**
+     * @return players
+     */
     abstract fun players(): Collection<Player>
 
     /**
@@ -31,12 +54,11 @@ abstract class Game() {
     abstract fun canJoin(): Boolean
 
     /**
-     * Remaining users to start.
-     * this will used from party system.
+     * acceptable users.
      *
-     * @return remaining usersto start.
+     * @return acceptable users.
      */
-    abstract fun remainingUsers(): Int
+    abstract fun acceptable(): Int
 
     /**
      * @return current game status.

@@ -1,7 +1,8 @@
-main: com.github.devlaq.matchmaker.MatchMaker
-name: MatchMaker
+main: com.github.devlaq.singularity.Singularity
+name: Singularity
 version: 1.0-dev3
 api-version: 1.18
 libraries:
+  - org.jetbrains.kotlin:kotlin-stdlib:1.6.10
   - io.github.monun:tap-core:4.4.0
   - io.github.monun:kommand-core:2.10.0
